@@ -11,6 +11,7 @@ Group: Networking/Mail
 Source: http://download.sourceforge.net/vacation/%{name}-%{version}.tar.bz2
 URL: http://sourceforge.net/projects/vacation/
 Buildrequires: gdbm-devel
+BuildRoot: %{_tmppath}/%{name}-buildroot
 Requires: sendmail-command
 
 %description 
