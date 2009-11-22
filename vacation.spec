@@ -1,6 +1,6 @@
 %define name vacation 
-%define version 1.2.6.1
-%define release 6
+%define version 1.2.7.0
+%define release 1
 
 Summary: Automatic mail answering program for Linux
 Name: %{name}
@@ -8,7 +8,7 @@ Version: %{version}
 Release: %mkrel %{release}
 License: GPL
 Group: Networking/Mail
-Source: http://download.sourceforge.net/vacation/%{name}-%{version}.tar.bz2
+Source: http://downloads.sourceforge.net/project/%{name}/%{name}/%{version}/%{name}-%{version}.tar.gz
 URL: http://sourceforge.net/projects/vacation/
 Buildrequires: gdbm-devel
 BuildRoot: %{_tmppath}/%{name}-buildroot
@@ -20,21 +20,21 @@ on many Unix systems. This version works with the sendmail
 restricted shell.
 
 %prep
-%setup -q -n %{name}
+%setup -q
 
 %build
-make CFLAGS="$RPM_OPT_FLAGS"
+%make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
-mkdir -p $RPM_BUILD_ROOT%{_bindir}
-mkdir -p $RPM_BUILD_ROOT%{_mandir}/man1
+mkdir -p %{buildroot}%{_bindir}
+mkdir -p %{buildroot}%{_mandir}/man1
 
-install -s -m 755 vacation        $RPM_BUILD_ROOT%{_bindir}/vacation
-install -m 755 vaclook         $RPM_BUILD_ROOT%{_bindir}/vaclook
-install -m 444 vacation.man    $RPM_BUILD_ROOT%{_mandir}/man1/vacation.1
-install -m 444 vaclook.man     $RPM_BUILD_ROOT%{_mandir}/man1/vaclook.1
+install -s -m 755 vacation        %{buildroot}%{_bindir}/vacation
+install -m 755 vaclook         %{buildroot}%{_bindir}/vaclook
+install -m 444 vacation.man    %{buildroot}%{_mandir}/man1/vacation.1
+install -m 444 vaclook.man     %{buildroot}%{_mandir}/man1/vaclook.1
 
 %post
 if [ -d /etc/smrsh/ ] ; then 
@@ -47,7 +47,7 @@ if [ -L /etc/smrsh/vacation ] ; then
 fi
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr (-,root,root) 
