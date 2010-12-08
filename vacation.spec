@@ -1,6 +1,6 @@
 %define name vacation 
 %define version 1.2.7.0
-%define release 1
+%define release 2
 
 Summary: Automatic mail answering program for Linux
 Name: %{name}
