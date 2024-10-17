@@ -7,7 +7,7 @@ Release:  4
 License:  GPL
 Group:    Networking/Mail
 Source:   http://downloads.sourceforge.net/project/%{name}/%{name}/%{version}/%{name}-%{version}.tar.gz
-URL:      http://sourceforge.net/projects/vacation/
+URL:      https://sourceforge.net/projects/vacation/
 Requires: sendmail-command
 BuildRequires: gdbm-devel
 
