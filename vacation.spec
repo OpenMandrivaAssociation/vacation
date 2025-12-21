@@ -9,6 +9,7 @@ Group:    Networking/Mail
 Source:   http://downloads.sourceforge.net/project/%{name}/%{name}/%{version}/%{name}-%{version}.tar.gz
 URL:      https://sourceforge.net/projects/vacation/
 Requires: sendmail-command
+BuildRequires:	make
 BuildRequires: gdbm-devel
 
 %description 
