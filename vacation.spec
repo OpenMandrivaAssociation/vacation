@@ -2,8 +2,8 @@
 
 Summary:  Automatic mail answering program for Linux
 Name:     vacation 
-Version:  1.2.7.0
-Release:  4
+Version:  1.2.7.1
+Release:  1
 License:  GPL
 Group:    Networking/Mail
 Source:   http://downloads.sourceforge.net/project/%{name}/%{name}/%{version}/%{name}-%{version}.tar.gz
